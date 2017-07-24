@@ -1,0 +1,26 @@
+{
+  "name": "hazelcastservice",
+  "version": "1.0.0",
+  "description": "Hazelcast communication layer",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arlingan/HazelcastService.git"
+  },
+  "keywords": [
+    "Hazelcast"
+  ],
+  "author": "Ashwin Reddy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arlingan/HazelcastService/issues"
+  },
+  "homepage": "https://github.com/arlingan/HazelcastService#readme",
+  "dependencies": {
+    "hapi": "^16.5.0"
+  }
+}
