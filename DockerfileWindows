@@ -2,7 +2,7 @@ FROM compulim/nanoserver-node
 
 # Create app directory
 RUN powershell New-Item -ItemType directory -Path C:\hazelcastservice
-WORKDIR C:\hazelcastservice
+WORKDIR C:\\hazelcastservice
 
 # Install app dependencies
 COPY package.json C:\hazelcastservice\package.json
