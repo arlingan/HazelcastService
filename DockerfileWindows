@@ -11,6 +11,7 @@ RUN npm install
 
 # Bundle application source
 COPY * C:\\hazelcastservice
+RUN C:\\hazelcastservice
 
 EXPOSE 3000
 CMD [ "npm", "start" ]
