@@ -1,0 +1,16 @@
+FROM compulim/nanoserver-node
+
+# Create app directory
+RUN powershell New-Item -ItemType directory -Path \usr\src\hazelcastservice
+WORKDIR \usr\src\hazelcastservice
+
+# Install app dependencies
+COPY package.json \usr\src\hazelcastservice\package.json
+COPY package-lock.json \usr\src\hazelcastservice\package-lock.json
+RUN npm install
+
+# Bundle application source
+COPY . \usr\src\hazelcastservice
+
+EXPOSE 3000
+CMD [ "npm", "start" ]
