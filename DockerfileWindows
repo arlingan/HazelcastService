@@ -5,12 +5,12 @@ RUN powershell New-Item -ItemType directory -Path C:\hazelcastservice
 WORKDIR C:\\hazelcastservice
 
 # Install app dependencies
-COPY package.json C:\hazelcastservice\package.json
-COPY package-lock.json C:\hazelcastservice\package-lock.json
+COPY package.json C:\\hazelcastservice\\package.json
+COPY package-lock.json C:\\hazelcastservice\\package-lock.json
 RUN npm install
 
 # Bundle application source
-COPY . C:\hazelcastservice
+COPY . C:\\hazelcastservice
 
 EXPOSE 3000
 CMD [ "npm", "start" ]
