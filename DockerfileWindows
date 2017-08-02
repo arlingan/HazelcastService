@@ -1,4 +1,4 @@
-FROM compulim/nanoserver-node
+FROM stefanscherer/node-windows:6
 
 # Create app directory
 RUN powershell New-Item -ItemType directory -Path C:\hazelcastservice
@@ -7,11 +7,12 @@ WORKDIR C:\\hazelcastservice
 # Install app dependencies
 COPY package.json C:\\hazelcastservice\\package.json
 COPY package-lock.json C:\\hazelcastservice\\package-lock.json
+COPY server.js C:\\hazelcastservice
 RUN npm install
 
-# Bundle application source
-COPY * C:\\hazelcastservice
-RUN C:\\hazelcastservice
+# Display the workdir
+RUN powershell Get-ChildItem -Path C:\hazelcastservice
 
 EXPOSE 3000
-CMD [ "npm", "start" ]
+#CMD [ "npm", "start" ]
+RUN powershell node server.js
